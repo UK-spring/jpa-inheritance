@@ -23,6 +23,11 @@ public class Main {
             Book book = new Book("wonuk", "spring-advanced", BigDecimal.TEN);
             em.persist(book);
 
+//            em.flush();
+//            em.clear();
+//
+//            Book findBook = em.find(Book.class, book.getId());
+
             transaction.commit();
         } catch (Exception e) {
             transaction.rollback();

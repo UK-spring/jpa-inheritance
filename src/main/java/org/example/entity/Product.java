@@ -7,10 +7,13 @@ import java.math.BigDecimal;
 @Entity
 @Table(name = "product")
 @DiscriminatorColumn(name = "dtype")
-public class Product {
+//@Inheritance(strategy = InheritanceType.JOINED)
+//@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+public abstract class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     private String name;
@@ -25,4 +28,7 @@ public class Product {
         this.price = price;
     }
 
+    public Long getId() {
+        return id;
+    }
 }
